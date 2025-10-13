@@ -16,7 +16,7 @@ public class Basic {
 
             }else {
                 System.out.println();
-                basicPattern(r-1, c);
+                basicPattern(r-1, 0);
             }
     }
 }

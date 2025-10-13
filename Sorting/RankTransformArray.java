@@ -11,7 +11,6 @@ public class RankTransformArray {
 
      static int[] arrayRankTransform(int[] arr) {
         int [] ans = new int [arr.length];
-        int count = 0;
         for(int i=0; i<arr.length; i++){
             ans[i] = arr[i];
         }
@@ -25,20 +24,22 @@ public class RankTransformArray {
                 }
             }
         }
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(ans));
 
-        int [] anss = new int [arr.length];
-        int a = 1;
-        for(int y=0; y<ans.length; y++){
-            for(int z=0; z<ans.length; z++){
-                if(arr[y] == ans[z]){
-                    if (z == 0) {
-                        anss[count] = y+1;
-                    }
-                    anss[count] = y;
-                    count++;
-                }
+        int [] actualAns = new int[ans.length];
+        int count = 0;
+
+        for (int index = 0; index < arr.length; index++) {
+            for (int i = 1; i < ans.length; i++) {
+                 if (arr[index] == ans[i]) {
+                    actualAns[count] = i;
+                 }
             }
         }
-        return anss;
+
+        return actualAns;
+
+
     }
 }

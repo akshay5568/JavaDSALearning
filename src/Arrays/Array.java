@@ -1,18 +1,14 @@
-import java.util.Scanner;
+package Arrays;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Array {
     public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//             int [][] arr = {
-//                     {1,2,3},
-//                     {4,5,6},
-//                     {7,8,9}
-//             };
-//             boolean ans = Search2dArr(arr, 87);
-//        System.out.println(ans);
-
-        int arr [] = {12,345,2,6,7896};
-        int ans = findNumbers(arr);
+       int [] arr = {3,2,2,3};
+       int target = 3;
+       int ans = RemoveElement(arr,target);
         System.out.println(ans);
     }
 
@@ -116,5 +112,78 @@ public class Array {
         return count;
     }
 
-    
+    static int [] RunningSum(int [] nums){
+            for (int i = 0; i < nums.length; i++){
+                if (i > 0) {
+                        nums[i] = nums[i] + nums[i-1];
+                }
+            }
+        return nums;
+    }
+
+
+    static int RichestCust(int [] [] accounts){
+        int ans = 0;
+
+        for (int i =0; i < accounts.length; i++){
+            int count = 0;
+            for (int j =0; j < accounts[i].length; j++){
+                if (j > 0){
+                    accounts[i][0] = accounts[i][j] + accounts[i][count];
+                    count++;
+                    if (accounts[i][0] > ans){
+                        ans = accounts[i][0];
+                    }
+                }
+                else {
+                    if (accounts[i][j] > ans){
+                        ans = accounts[i][j];
+                    }
+                }
+            }
+        }
+        return ans;
+    }
+
+   static int[] RemoveDuplicate(int [] nums){
+        int counter = 0;
+        int arr[] = new int[nums.length];
+
+        for (int i =0; i < nums.length; i++){
+            boolean isDuplicate = false;
+
+            for (int j =0; j < counter; j++){
+                if (nums[i] == arr[j]){
+                   isDuplicate = true;
+                   break;
+                }
+            }
+
+            if (!isDuplicate){
+                arr[counter] = nums[i];
+                counter++;
+            }
+
+
+        }
+       int [] result = new int[counter];
+       for (int k =0; k < counter; k++){
+           result[k] = arr[k];
+       }
+        return result;
+    }
+
+
+    static int RemoveElement(int [] nums, int val){
+        if(nums.length == 0 || nums.length == 1){
+            return nums.length;
+        }
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i=0; i<nums.length; i++){
+            if(nums[i] != val){
+                list.add(nums[i]);
+            }
+        }
+        return list.size();
+    }
 }

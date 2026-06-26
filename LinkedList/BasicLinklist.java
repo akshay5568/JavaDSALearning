@@ -25,6 +25,17 @@ public class BasicLinklist {
          head = node;
     }
 
+    public void insertLast(int value){
+        Node node = new Node(value);
+        if (head == null){
+            head = node;
+            tail = node;
+            return;
+        }
+        tail.next = node;
+        tail = node;
+    }
+
     public void displayNodes(){
          Node node = head;
          while(node != null){
@@ -38,6 +49,8 @@ public class BasicLinklist {
             BasicLinklist LL = new BasicLinklist();
             LL.insert(87);
             LL.insert(97);
+            LL.insertLast(100);
+            LL.insertLast(110);
             LL.displayNodes();
     }
 }

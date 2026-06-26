@@ -17,10 +17,9 @@ public class Basic {
 //        mp.replace(1,7);
 //        System.out.println(mp);
 
-//        StringBuilder st = new StringBuilder("Aditya");
+        StringBuilder st = new StringBuilder("Aditya");
         String s = "adobjb";
-        System.out.println(s.contains(""));
-
 
     }
+
 }

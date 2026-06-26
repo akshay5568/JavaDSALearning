@@ -12,7 +12,7 @@ public class SubSet {
 //        System.out.println(ans);
           List<List<Integer>> ans = new ArrayList<>();
           List<Integer> temp = new ArrayList<>();
-          SubSet(new int[]{1,2,2},0,ans,temp);
+          SubSet(new int[]{1,2,3},0,ans,temp);
           System.out.println(ans);
     }
 

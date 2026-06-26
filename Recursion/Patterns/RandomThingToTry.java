@@ -2,7 +2,6 @@ package Recursion.Patterns;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class RandomThingToTry {
 //    public static void main(String[] args) {
@@ -12,11 +11,35 @@ public class RandomThingToTry {
 //        System.out.println(ans);
 //    }
 
+//    public static void main(String[] args) {
+//            int []arr= {3,2,1};
+//            int [] ans = Rec(arr);
+//            System.out.println(Arrays.toString(ans));
+//    }
+
+
     public static void main(String[] args) {
-            int []arr= {87,54,34,4,6436,423434,4234,43434};
-            int [] ans = Rec(arr);
-            System.out.println(Arrays.toString(ans));
+        ArrayList<Integer> ans = firstDoubleIntegerDigit(1);
+        System.out.println(ans);
     }
+
+
+
+    public static ArrayList<Integer> firstDoubleIntegerDigit(int n){
+        ArrayList<Integer> temp = new ArrayList<>();
+        if (n > 9) return temp;
+        temp.add(n);
+        temp.addAll(firstDoubleIntegerDigit(n+1));
+        return temp;
+    }
+
+
+
+
+
+
+
+
 
 
     public static int [] Rec(int [] arr){
@@ -26,6 +49,8 @@ public class RandomThingToTry {
         int [] second = Rec(Arrays.copyOfRange(arr,mid,arr.length));
         return merge(first,second);
     }
+
+
 
     public static int [] merge(int [] first, int [] second){
         int [] temp = new int[first.length+second.length];

@@ -7,6 +7,9 @@ public class JumpGame {
         System.out.println(ans);
     }
 
+
+    //I already solved this problem but I have to revise again it, therefore I created this file.
+
     static boolean canJump(int[] nums) {
         if (nums.length == 1) return true;
         int r = 0;

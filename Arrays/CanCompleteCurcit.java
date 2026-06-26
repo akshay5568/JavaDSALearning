@@ -1,5 +1,7 @@
 package Arrays;
 
+import java.util.HashMap;
+
 public class CanCompleteCurcit {
     public static void main(String[] args) {
         int [] arr = {5,1,2,3,4};
@@ -82,6 +84,10 @@ public class CanCompleteCurcit {
 
 
     static int canCompleteCurcit(int [] gas, int [] cost){
+
+        HashMap<String,String> hm = new HashMap<>();
+
+
         int start =0;
         int tank = 0;
         int total = 0;

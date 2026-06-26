@@ -24,13 +24,24 @@ public class WordSearch {
         if (start == word.length()) return true;
         if (0 > row || 0 > col || board.length <= row || board[row].length <= col || used[row][col] || word.charAt(start) != board[row][col]) return false;
         used[row][col] = true;
-
+        printUsedForDebug(used);
+        System.out.println("------------------------------");
         boolean result = wordSearchBack(row,col+1,word,used,board,start+1)
                 ||wordSearchBack(row,col-1,word,used,board,start+1)
                 || wordSearchBack(row+1,col,word,used,board,start+1)
                 || wordSearchBack(row-1,col,word,used,board,start+1);
         used[row][col] = false;
-
+        printUsedForDebug(used);
+        System.out.println("------------------------------");
         return result;
+    }
+
+    public static void printUsedForDebug(boolean[][] used){
+        for (int i=0; i<used.length; i++){
+            for (int j=0; j<used[i].length; j++){
+                System.out.print(" " + used[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }

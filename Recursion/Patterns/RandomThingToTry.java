@@ -1,7 +1,11 @@
 package Recursion.Patterns;
 
+import HASHTABLE.WordPattern;
+import HashMap.WordSearch;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class RandomThingToTry {
 //    public static void main(String[] args) {
@@ -18,10 +22,59 @@ public class RandomThingToTry {
 //    }
 
 
-    public static void main(String[] args) {
-        ArrayList<Integer> ans = firstDoubleIntegerDigit(1);
-        System.out.println(ans);
+//    public static void main(String[] args) {
+//        ArrayList<Integer> ans = firstDoubleIntegerDigit(1);
+//        System.out.println(ans);
+//    }
+
+    public static void main(String[] args){
+        char [][] arr = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+        System.out.println(exist(arr,"ABCB"));
     }
+
+    public static boolean exist(char [][] arr, String word){
+        boolean [][] used = new boolean[arr.length][arr[0].length];
+        boolean result = false;
+        for (int i=0; i<arr.length; i++){
+            for (int j=0; j<arr[i].length; j++){
+                if (word.charAt(0) == arr[i][j]){
+                    result = WordSearch(arr,word,i,j,0,used);
+                    if (result) return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+    public static boolean WordSearch(char [][] arr, String word,int row,int col,int start,boolean [][] used){
+        if (start == word.length()) return true;
+        if (0 > row || 0 > col || arr.length <= row || arr[row].length <= col || used[row][col] || word.charAt(start) != arr[row][col]) return false;
+
+        used[row][col] = true;
+        boolean res = WordSearch(arr,word,row,col+1,start+1,used)
+                || WordSearch(arr,word,row,col-1,start+1,used)
+                || WordSearch(arr,word,row+1,col,start+1,used)
+                || WordSearch(arr,word,row-1,col,start+1,used);
+        used[row][col] = false;
+
+        return res;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -32,10 +85,6 @@ public class RandomThingToTry {
         temp.addAll(firstDoubleIntegerDigit(n+1));
         return temp;
     }
-
-
-
-
 
 
 

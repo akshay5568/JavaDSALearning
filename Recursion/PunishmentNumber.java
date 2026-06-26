@@ -2,43 +2,35 @@ package Recursion;
 
 public class PunishmentNumber {
     public static void main(String[] args) {
-        System.out.println(punishmentNumber(46));
+        System.out.println(punishmentNumber(9));
     }
 
 
     public static int punishmentNumber(int n) {
         int count = 0;
-            for (int i=1; i<=n; i++){
-                String up = String.valueOf(i * i);
-                if (punishmentNumberBack(up,0,0,i)){
-                    count += i * i;
-                }
-            }
-            return count;
+//            for (int i=1; i<=n; i++){
+//                String up = String.valueOf(i * i);
+//                if (punishmentNumberBack(up,0,0,i)){
+//                    count += i * i;
+//                }
+//            }
+        if (punishmentNumberBack("1296",0,0,36)) System.out.println(36);
+        return count;
     }
 
 
 
+    //The main key idea in this problem was we were creating new num for every new  recursion call,
+    // but when time comes to backtrack we were calculation with previous num.
+
     public static boolean punishmentNumberBack(String up, int sum,int start,int n) {
-        if (up.length() == 1) {
-            return String.valueOf(n).equals(up);
+        if (up.length() == start) {
+            return sum == n;
         }
-        if (start >= up.length()){
-            if (sum == n){
-                return true;
-            }else return false;
-        }
+        int num = 0;
         for (int i=start; i<up.length(); i++){
-            sum += up.charAt(i) - '0';
-            if (punishmentNumberBack(up,sum,i+1,n)) return true;
-            if (0 <= i-1){
-                int a = up.charAt(i-1) - '0';
-                int b = up.charAt(i) - '0';
-                sum -= a; sum -= b;
-                int temp = a * 10 + b;
-                sum += temp;
-            }
-            if (punishmentNumberBack(up,sum,i+1,n)) return true;
+            num = num * 10 + (up.charAt(i) - '0');
+            if (punishmentNumberBack(up,sum+num,i+1,n)) return true;
         }
         return false;
     }

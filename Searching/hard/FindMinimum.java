@@ -2,7 +2,7 @@ package Searching.hard;
 
 public class FindMinimum {
     public static void main(String[] args) {
-        int[] nums = {3,1,3};
+        int[] nums = {4,5,6,7,2,3};
         int anss = findMinimum(nums);
         System.out.print(anss);
 

@@ -15,7 +15,7 @@ public class GenratePeranthesis {
     Output: ["((()))","(()())","(())()","()(())","()()()"]
     */
 
-    public static List<String> generateParenthesis(int n) {
+    public static List<String> generateParenthesis(int n) {    
          List<String> ans = new ArrayList<>();
          Rec(n,0,0,"",ans);
          return ans;

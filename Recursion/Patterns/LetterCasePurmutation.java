@@ -20,8 +20,10 @@ public class LetterCasePurmutation {
     public static void Back(String p, StringBuilder up,Set<String> ans,int start){
         if (p.length() == up.length()){
             ans.add(p);
+            System.out.println(ans);
             return;
         }
+
         for (int i=start; i<up.length(); i++){
              char ch = up.charAt(i);
              Back(p + ch,up,ans,i+1);

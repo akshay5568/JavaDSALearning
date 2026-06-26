@@ -3,7 +3,7 @@ package Recursion;
 public class WordSearch {
     public static void main(String[] args) {
             char[][] board = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
-        System.out.println(exist(board,"SEE"));
+        System.out.println(exist(board,"ABCCE"));
     }
 
     public static boolean exist(char [][] board, String word){

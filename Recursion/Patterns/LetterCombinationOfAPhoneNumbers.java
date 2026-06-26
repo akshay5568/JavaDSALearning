@@ -5,16 +5,14 @@ import java.util.*;
 
 public class LetterCombinationOfAPhoneNumbers {
     public static void main(String[] args) {
-         List<String> ans = letterCombinations("236");
+        List<String> ans = letterCombinations("236");
         System.out.println(ans);
     }
 
     public static List<String> letterCombinations(String digits) {
         Map<Character,String> hm = new HashMap<>();
         hm.put('2',"abc"); hm.put('3',"def"); hm.put('4',"ghi"); hm.put('5',"jkl"); hm.put('6',"mno"); hm.put('7',"pqrs"); hm.put('8',"tuv"); hm.put('9',"wxyz");
-
         System.out.println(hm);
-
         List<String> ans = new ArrayList<>();
         BackTrackFunction(ans,new StringBuilder(),digits,0,hm);
         return ans;

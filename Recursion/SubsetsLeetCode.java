@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SubsetsLeetCode {
     public static void main(String[] args) {
-        int [] nums = {1,2,3};
+        int [] nums = {95,87,98,100};
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> temp = new ArrayList<>();
         SubSetRec(nums,0,ans,temp);
@@ -15,6 +15,7 @@ public class SubsetsLeetCode {
     public static void SubSetRec(int [] nums,int index,List<List<Integer>> ans, List<Integer> temp){
         if (index >= nums.length){
             ans.add(new ArrayList<>(temp));
+            System.out.println(temp);
             return;
         }
         temp.add(nums[index]);

@@ -1,22 +1,26 @@
 package Recursion.Patterns;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Purmetation {
     public static void main(String[] args) {
-            String str = "abc";
-            purmeutation(str,"");
-
+            String str = "cat";
+            purmeutation(new int[]{1,2,3},new ArrayList<>(),new boolean[]{false,false,false});
     }
 
-    static void purmeutation(String str, String st){
-            if (str.isEmpty()) {
-                System.out.println(st);
+    static void purmeutation(int [] arr, List<Integer> temp, boolean [] used) {
+            if (temp.size() >= arr.length) {
+                System.out.println(temp);
                 return;
-            };
-                char ch = str.charAt(0);
-                for (int  i=0; i<=st.length(); i++){
-                    String first = st.substring(0,i);
-                    String sec = st.substring(i);
-                    purmeutation(str.substring(1),first + ch + sec);
-                }
+            }
+            for (int i=0; i<arr.length; i++){
+                if (used[i]) continue;
+                temp.add(arr[i]);
+                used[i] = true;
+                purmeutation(arr,temp,used);
+                temp.removeLast();
+                used[i] = false;
+            }
     }
 }

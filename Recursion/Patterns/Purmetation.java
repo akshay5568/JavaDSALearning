@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Purmetation {
     public static void main(String[] args) {
-//            String str = "abc";
-            purmeutation(new int[]{1,2,3},new ArrayList<>(),new boolean[]{false,false,false});
+            String str = "a1b2";
+//            purmeutation(new int[]{1,2,3},new ArrayList<>(),new boolean[]{false,false,false});
 //          boolean[] used = new boolean[str.length()];
-//            StringPurmutation("",str);
+            StringPurmutation("",str);
     }
 
 

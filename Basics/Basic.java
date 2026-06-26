@@ -4,9 +4,14 @@ import java.util.Stack;
 
 public class Basic {
     public static void main(String[] args) {
-        String s = "AsaSs";
-        String ans = makeGood(s);
-        System.out.println(ans);
+//        String s = "AsaSs";
+//        String ans = makeGood(s);
+//        System.out.println(ans);
+        StringBuilder st = new StringBuilder("Aditya");
+        st.replace(1,2,"5");
+
+        System.out.println(st);
+
     }
 
     static String makeGood(String s) {

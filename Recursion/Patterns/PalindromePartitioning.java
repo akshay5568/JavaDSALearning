@@ -1,11 +1,15 @@
 package Recursion.Patterns;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class PalindromePartitioning {
     public static void main(String[] args) {
-        BackTrack("","aab",new ArrayList<>(),0);
+        List<List<String>> ans = new ArrayList<>();
+        BackTrack("aab",new ArrayList<>(),0,ans);
+        System.out.println(ans);
     }
 
 
@@ -21,16 +25,20 @@ public class PalindromePartitioning {
         }
         return true;
     }
-    public static void BackTrack(String s, String temp, List<String> list,int start){
-        if (temp.isEmpty()){
-            System.out.println(s);
+    public static void BackTrack(String temp, List<String> list,int start, List<List<String>> ans){
+        if (start == temp.length()){
             System.out.println(list);
+            ans.add(new ArrayList<>(list));
             return;
         }
         for (int i=start; i<temp.length(); i++){
-            s = s + temp.charAt(i);
-            list.add(s);
-            BackTrack(s,temp.substring(0,i)+temp.substring(i+1,temp.length()),list,i);
+            System.out.println("Call Stack" + " " + start);
+            String sub = temp.substring(start,i+1);
+            if (isPalin(sub)){
+                list.add(sub);
+                BackTrack(temp,list,i+1,ans);
+                list.removeLast();
+            }
         }
     }
 }

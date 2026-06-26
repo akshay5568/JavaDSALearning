@@ -1,11 +1,16 @@
 package Recursion.Patterns;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PalindromePartitioning {
     public static void main(String[] args) {
-        BackTrack("aab","");
+        BackTrack("","aab",new ArrayList<>(),0);
     }
 
 
+//    Input: s = "aab"
+//    Output: [["a","a","b"],["aa","b"]]
 
     public static boolean isPalin(String temp){
         if (temp.isEmpty()) return false;
@@ -16,16 +21,16 @@ public class PalindromePartitioning {
         }
         return true;
     }
-    public static void BackTrack(String s,String temp){
-        if (isPalin(temp)) {
-            System.out.println(temp);
+    public static void BackTrack(String s, String temp, List<String> list,int start){
+        if (temp.isEmpty()){
+            System.out.println(s);
+            System.out.println(list);
             return;
         }
-        for (int i=0; i<s.length(); i++){
-
+        for (int i=start; i<temp.length(); i++){
+            s = s + temp.charAt(i);
+            list.add(s);
+            BackTrack(s,temp.substring(0,i)+temp.substring(i+1,temp.length()),list,i);
         }
     }
-//    public List<List<String>> partition(String s) {
-//
-//    }
 }

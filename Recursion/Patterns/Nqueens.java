@@ -63,8 +63,11 @@ public class Nqueens {
         for(int i=0; i<arr.length; i++){
             if(isValidQ(r,i,arr)){
                 arr[r][i] = "Q";
+                System.out.println(Arrays.deepToString(arr));
                 BackTrac(arr,temp,r+1,i);
                 arr[r][i] = ".";
+                System.out.println(Arrays.deepToString(arr));
+                System.out.println("------------------------");
             }
         }
     }

@@ -27,39 +27,63 @@ public class RandomThingToTry {
 //        System.out.println(ans);
 //    }
 
-    public static void main(String[] args){
-        char [][] arr = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
-        System.out.println(exist(arr,"ABCB"));
+//    public static void main(String[] args){
+//        char [][] arr = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+//        System.out.println(exist(arr,"ABCB"));
+//    }
+
+
+    public static void main(String[] args) {
+        int [] arr= {1,2,2,3,3};
+        boolean[] used = new boolean[arr.length];
+        permutation(arr,new ArrayList<>(),used);
     }
 
-    public static boolean exist(char [][] arr, String word){
-        boolean [][] used = new boolean[arr.length][arr[0].length];
-        boolean result = false;
-        for (int i=0; i<arr.length; i++){
-            for (int j=0; j<arr[i].length; j++){
-                if (word.charAt(0) == arr[i][j]){
-                    result = WordSearch(arr,word,i,j,0,used);
-                    if (result) return true;
-                }
-            }
+    public static void permutation(int [] arr, List<Integer>temp,boolean[] used){
+        if (temp.size() == arr.length) {
+            System.out.println(temp);
+            return;
         }
-        return false;
+        for (int i=0; i<arr.length; i++){
+            if (used[i]) continue;
+            used[i] = true;
+            temp.add(arr[i]);
+            permutation(arr,temp,used);
+            used[i] = false;
+            temp.removeLast();
+        }
     }
 
 
-    public static boolean WordSearch(char [][] arr, String word,int row,int col,int start,boolean [][] used){
-        if (start == word.length()) return true;
-        if (0 > row || 0 > col || arr.length <= row || arr[row].length <= col || used[row][col] || word.charAt(start) != arr[row][col]) return false;
 
-        used[row][col] = true;
-        boolean res = WordSearch(arr,word,row,col+1,start+1,used)
-                || WordSearch(arr,word,row,col-1,start+1,used)
-                || WordSearch(arr,word,row+1,col,start+1,used)
-                || WordSearch(arr,word,row-1,col,start+1,used);
-        used[row][col] = false;
+//    public static boolean exist(char [][] arr, String word){
+//        boolean [][] used = new boolean[arr.length][arr[0].length];
+//        boolean result = false;
+//        for (int i=0; i<arr.length; i++){
+//            for (int j=0; j<arr[i].length; j++){
+//                if (word.charAt(0) == arr[i][j]){
+//                    result = WordSearch(arr,word,i,j,0,used);
+//                    if (result) return true;
+//                }
+//            }
+//        }
+//        return false;
+//    }
 
-        return res;
-    }
+
+//    public static boolean WordSearch(char [][] arr, String word,int row,int col,int start,boolean [][] used){
+//        if (start == word.length()) return true;
+//        if (0 > row || 0 > col || arr.length <= row || arr[row].length <= col || used[row][col] || word.charAt(start) != arr[row][col]) return false;
+//
+//        used[row][col] = true;
+//        boolean res = WordSearch(arr,word,row,col+1,start+1,used)
+//                || WordSearch(arr,word,row,col-1,start+1,used)
+//                || WordSearch(arr,word,row+1,col,start+1,used)
+//                || WordSearch(arr,word,row-1,col,start+1,used);
+//        used[row][col] = false;
+//
+//        return res;
+//    }
 
 
 

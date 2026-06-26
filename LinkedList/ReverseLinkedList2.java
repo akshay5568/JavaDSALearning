@@ -9,6 +9,10 @@ class ListNode {
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
 
+
+//I have to solve this Leetcode problem.
+//Today did not solve this problem because of some reason now I will solve Tommoraw;
+
 public class ReverseLinkedList2 {
     public static void main(String[] args) {
            int [] arr = {1,2,3,4,5};

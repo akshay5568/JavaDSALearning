@@ -32,12 +32,12 @@ public class BaiscLinkedList {
               head = tail = n1;
               return;
           }
-          tail.next = n1;
+          n1.next = n1;
           tail = n1;
     }
 
     void display(){
-        Node temp  = head;
+        Node temp = head;
            while(temp != null){
                System.out.println(temp.data);
                temp = temp.next;

@@ -13,6 +13,14 @@ public class Basic {
         s.push(7);
         s.push(6);
         s.push(5);
+        System.out.println(s);
         System.out.println(s.peek());
+        q.add(1);
+        q.add(1);
+        q.add(0);
+        System.out.println(q);
+        System.out.println(q.peek());
+        System.out.println(q.poll());
+        System.out.println(q);
     }
 }

@@ -7,17 +7,12 @@ import java.util.Stack;
 
 public class Basic {
     public static void main(String[] args) {
-//        Stack s = new Stack();
-//        s.push(4);
-//        System.out.println(s.empty());
-//        System.out.println(s.size());
-//        System.out.println(s);
-        Queue q = new LinkedList();
-        q.add(4);
-        q.offer(7);
-        q.poll();
-        System.out.println(q);
-        boolean ans = q.isEmpty();
-        System.out.println(ans);
+        Stack <Integer> s = new Stack<>();
+        Queue<Integer> q = new LinkedList<>();
+        s.push(8);
+        s.push(7);
+        s.push(6);
+        s.push(5);
+        System.out.println(s.peek());
     }
 }

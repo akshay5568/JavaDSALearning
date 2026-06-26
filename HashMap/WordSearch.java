@@ -13,7 +13,6 @@ public class WordSearch {
 
     static boolean exist(char[][] board, String word) {
         HashMap<Character,Integer> hm = new HashMap<>();
-
         for(int i=0; i<word.length(); i++){
             if(hm.containsKey(word.charAt(i))){
                 int countINC = hm.get(word.charAt(i));

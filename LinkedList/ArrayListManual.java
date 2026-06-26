@@ -4,14 +4,14 @@ import java.util.Arrays;
 
 public class ArrayListManual {
     public static void main(String[] args) {
-        Arraylist a1 = new Arraylist();
+        Arraylist<Number> a1 = new Arraylist<Number>();
         a1.add(5);
         a1.display();
 
     }
 }
 
-class Arraylist{
+class Arraylist<I extends Number> {
      int count = 10;
      int [] temp = new int[count];
      int addCounter = 0;
@@ -44,4 +44,6 @@ class Arraylist{
           temp[index] = element;
      }
 
+    public I size() {
+    }
 }

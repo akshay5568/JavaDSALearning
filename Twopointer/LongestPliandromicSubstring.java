@@ -2,13 +2,13 @@ package Twopointer;
 
 public class LongestPliandromicSubstring {
     public static void main(String[] args) {
-        String str = "adityacaraaaaaa";
+        String str = "nakbjakbvbkbaaaaaakbbkkbkbkbk";
         String ans = longestPalindrome(str);
         System.out.println(ans);
     }
 //I have to solve this problem enterly.
 
-    static String longestPalindrome(String s) {
+    static String longestPalindrome2(String s) {
         StringBuilder st = new StringBuilder(s);
         int r = 1;
         int l = 0;
@@ -29,6 +29,26 @@ public class LongestPliandromicSubstring {
                 }
             }
             r++;
+        }
+        return ans;
+    }
+
+
+    static String longestPalindrome(String s) {
+        StringBuilder st = new StringBuilder(s);
+        int maxLength = 0;
+        String ans = "";
+        for(int i=0; i<st.length(); i++){
+            for(int j=i+1; j<st.length(); j++){
+                StringBuilder temp = new StringBuilder(st.substring(i,j+1));
+                String is = isPalin(temp);
+                if(!is.isEmpty()){
+                    if(is.length() > maxLength){
+                        maxLength = is.length();
+                        ans = is;
+                    }
+                }
+            }
         }
         return ans;
     }

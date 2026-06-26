@@ -1,4 +1,4 @@
-package Searching;
+package Searching.BinarySearch;
 
 //This is basic problem of binary search.
 public class BinarySearch {

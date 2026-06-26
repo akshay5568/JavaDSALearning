@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Combination {
     public static void main(String[] args) {
-       List<List<Integer>> ans =  combine(4,2);
+       List<List<Integer>> ans =  combine(4,4);
         System.out.println(ans);
     }
 

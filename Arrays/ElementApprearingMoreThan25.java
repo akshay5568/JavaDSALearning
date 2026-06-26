@@ -1,3 +1,5 @@
+package Arrays;
+
 public class ElementApprearingMoreThan25 {
     public static void main(String[] args) {
         int [] arr  = {1,1,1,1,1,2,3,4,5,6,12,12,12,12};

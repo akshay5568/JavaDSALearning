@@ -8,20 +8,19 @@ public class NumOfSubArrays {
     }
 
     public static int numOfSubarrays(int[] arr, int k, int threshold) {
-        int r=0; int l=0;
+        int r=k; int l=0;
         int totalSubArrays = 0;
         int count = 0;
+        for (int i=l; i<r; i++){
+            count += arr[i];
+        }
+        if ((count)/k >= threshold) totalSubArrays++;
         while(r < arr.length){
-            while(r < k){
-                count += arr[r];
-                r++;
-            }
-            count = (count)/k;
-            if(count >= threshold) totalSubArrays++;
-            r++;
             count += arr[r];
+            r++;
             count -= arr[l];
             l++;
+            if ((count)/k >= threshold) totalSubArrays++;
         }
         return totalSubArrays;
     }

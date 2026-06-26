@@ -3,7 +3,7 @@ package Recursion;
 public class ArrayRecursion {
     public static void main(String[] args) {
         int [] nums = {1,2,3,98,5,87};
-        int target = 0;
+        int target = 87;
         int ans = isElement(nums, target, 0);
         System.out.println(ans);
     }

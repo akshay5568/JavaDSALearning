@@ -37,9 +37,10 @@ public class BaiscLinkedList {
     }
 
     void display(){
-           while(head != null){
-               System.out.println(head.data);
-               head = head.next;
+        Node temp  = head;
+           while(temp != null){
+               System.out.println(temp.data);
+               temp = temp.next;
            }
     }
 

@@ -8,8 +8,8 @@ import java.util.List;
 
 public class CombinationSum {
     public static void main(String[] args) {
-        int [] candidates= {2,3,6,7};
-        List<List<Integer>> ans = combinationSum(candidates,7);
+        int [] candidates= {10,1,2,7,6,1,5};
+        List<List<Integer>> ans = combinationSum(candidates,8);
         System.out.println(ans);
     }
 
@@ -20,8 +20,9 @@ public class CombinationSum {
         return ans;
     }
 
-    public static void combinationSumRec(int[] candidates,int start,  int target, List<List<Integer>> ans, List<Integer> temp){
+    public static void combinationSumRec(int[] candidates,int start, int target, List<List<Integer>> ans, List<Integer> temp){
         if(target <= 0){
+
             if(target == 0) {
                 ans.add(new ArrayList<>(temp));
             }

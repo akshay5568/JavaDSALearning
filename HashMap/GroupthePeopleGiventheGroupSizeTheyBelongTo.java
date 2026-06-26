@@ -18,38 +18,17 @@ public class GroupthePeopleGiventheGroupSizeTheyBelongTo {
 
         for(int i=0; i<groupSizes.length; i++){
             if(!hm.containsKey(groupSizes[i])){
-                List <Integer> temp = new ArrayList<>();
-                temp.add(i);
-                hm.put(groupSizes[i],temp);
+                hm.put(groupSizes[i],new ArrayList<>());
             }
-            else {
-                List <Integer> temp = hm.get(groupSizes[i]);
-                temp.add(i);
-                hm.put(groupSizes[i],temp);
-            }
-        }
-        System.out.println(hm);
-        for(Map.Entry<Integer,List<Integer>> entry : hm.entrySet()){
-            List <Integer> temp = entry.getValue();
-            System.out.println(temp);
-            int count = 0;
-            if(temp.size() > entry.getKey()){
-                for(int i=0;i<temp.size()/entry.getKey(); i++){
-                    List<Integer> ans = new ArrayList<>();
-                    for(int j=0; j<3; j++){
-                        ans.add(temp.get(count));
-                        count++;
-                    }
-                    System.out.println(ans);
-                    list.add(ans);
-                    System.out.println(list);
-                }
-            }else{
-                list.add(temp);
-                System.out.println(temp);
-                System.out.println(list);
-            }
-        }
+            List<Integer> ans = hm.get(groupSizes[i]);
+            ans.add(i);
 
+            if(groupSizes[i] == ans.size()){
+                list.add(ans);
+                hm.remove(groupSizes[i]);
+            }
+        }
         return list;
-    }}
+    }
+
+}

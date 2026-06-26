@@ -7,7 +7,10 @@ public class InBuildLinkedList {
         LinkedList <Integer> LL = new LinkedList<>();
         LL.add(8);
         LL.add(9);
+        LL.addLast(7);
+        LL.addFirst(1);
         LL.add(10);
+
         System.out.println(LL);
     }
 }

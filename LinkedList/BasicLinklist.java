@@ -2,7 +2,7 @@ package LinkedList;
 
 public class BasicLinklist {
 
-    static public class Node{
+    public class Node{
         int value;
         Node next;
         Node(int value){

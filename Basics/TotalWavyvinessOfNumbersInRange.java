@@ -20,11 +20,8 @@ public class TotalWavyvinessOfNumbersInRange {
             int left = str.charAt(i-1) - '0';
             int mid = str.charAt(i) - '0';
             int right = str.charAt(i+1) - '0';
-
             if (left > mid && mid < right || left < mid && mid > right) sum++;
-
         }
-
         return sum;
     }
 }

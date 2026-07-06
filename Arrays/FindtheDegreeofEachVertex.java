@@ -1,0 +1,19 @@
+package Arrays;
+
+public class FindtheDegreeofEachVertex {
+    public static void main(String[] args) {
+
+    }
+
+    public int[] findDegrees(int[][] matrix) {
+        int [] answer = new int[matrix.length];
+        for(int i=0; i<matrix.length; i++){
+            int count = 0;
+            for(int j=0; j<matrix[i].length; j++){
+                if(matrix[i][j] == 1) count++;
+            }
+            answer[i] = count;
+        }
+        return answer;
+    }
+}

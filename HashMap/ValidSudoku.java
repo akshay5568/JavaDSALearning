@@ -21,6 +21,8 @@ public class ValidSudoku {
 
 
 
+
+
     static boolean isValidSudoku(char[][] board) {
 
         for(int i=0; i<board.length; i++){

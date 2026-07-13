@@ -1,6 +1,8 @@
 package StackAndQueues;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 class CustomStack {
     private ArrayList<Integer> st;

@@ -1,7 +1,11 @@
 package String;
 
+import java.util.Arrays;
+
 public class HasSameDigit {
     public static void main(String[] args) {
+        int [][]k = new int[9][9];
+        System.out.println(Arrays.deepToString(k));
         System.out.println(hasSameDigits("3902"));
     }
 

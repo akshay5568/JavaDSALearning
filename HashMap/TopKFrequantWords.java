@@ -26,7 +26,7 @@ public class TopKFrequantWords {
                         Map.Entry::getKey,
                         Map.Entry::getValue,
                         (oldValue, newValue) -> oldValue,
-                        LinkedHashMap::new // Preserves the descending stream order
+                        LinkedHashMap::new // Preserves the descending stream order   
                 ));
 
 
